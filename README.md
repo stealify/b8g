@@ -30,3 +30,8 @@ src/snapshot/snapshot.cc
 a context is a data structure representing the JS Representation including the links and function calls to the Components often referenced as Modules while you can see there is no concept of Dynamic Modules inside a JS Engine this is a Concept of JS Runtimes b8g does not Implement a Runtime it is runtime and engine agnostic tooling written in ECMAScript using its own Concepts while there will exist a b8g-runtime at some point we do as of current time of writing this refer always to justjs as the proof of concept it is linux only at present but it implements a good starting point alternatives would be graalvm, or deno v8 bindings. see: 
 - [ ] - https://github.com/denoland/deno/issues/1877
 
+
+## Examples
+- [ ] Using justjs static build.
+- [ ] Using quarkus + es4x (graaljs) + graalvm native image as target.
+- [ ] expose the justjs c++ api as external c to deno to enable a single shared code base for the snapshot tooling. 
