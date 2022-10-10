@@ -1,4 +1,14 @@
-# b8g (Big Engine) - Universal Compiler Feedback Interface for LLVM/GCC/V8/GRAALVM
+# b8g (Big Engine) 
+The Core of b8g is the universal module system it combines a complet vm build kit. It offers only the bare minimum needed for that.
+This level of Granularity is the solution to all development problems in the future. 
+
+## Features 
+- Operate on SharedMemory
+- Capability based Component Model
+- Implements Tasks, Streams, Events, as also stdio, fd for backward compat with legacy apps
+
+
+### Universal Compiler Feedback Interface for LLVM/GCC/V8/GRAALVM
 A Compiler Feedback Interface tooling for Runtimes mainly used to build a StealifyVM distribution written in Stealify Language designed to get used as ring 0 with or without a Linux Kernel offers Adapters for *Nix Kernel and InitD Replacements like SysV SystemD. It is able to take Snapshots that can directly get used in Diffrent Runtime Environments or Standalone.
 
 This Project is a dependencie of, 
