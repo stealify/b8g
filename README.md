@@ -3,6 +3,8 @@ The Core of b8g is the universal module or lets better say component system it c
 
 This level of Granularity is the solution to all development problems in the future. Its main aim is to Replace LLVM at some Point and even Integrate all gcc features optional this solves the long discussion about licences as we all know Stealifys main goal is making all under The Unlicense and Stealify Lang as a Meta Language Unlicenses all Other Languages because no one can license or patent or license Generic Arithmetic which is a Math concept. So do not get confused we take care of the rest.
 
+every component accepts sharedMemory as also none shared one and a additional callback. thats it also even function parameters or eveything else needed is supplyed via shared memory as transport there is no concept of std input output a component is a composition of Functional Streams that operate on Handels a handel can represent diffrent backends like sharedMemory or a file the handle is the Interface for the Software while you can use inside the handle implementation other low level primitives but you should always reuse as much existing components as possible as this will lead to better faster code as every code is isolated by design there is never sharedState between components only if a component passes its handels to a other component so you are fully aware what shares state.
+
 ## Features 
 - Operate on SharedMemory
 - Capability based Component Model
