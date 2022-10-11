@@ -5,6 +5,8 @@ This level of Granularity is the solution to all development problems in the fut
 
 every component accepts sharedMemory as also none shared one and a additional callback. thats it also even function parameters or eveything else needed is supplyed via shared memory as transport there is no concept of std input output a component is a composition of Functional Streams that operate on Handels a handel can represent diffrent backends like sharedMemory or a file the handle is the Interface for the Software while you can use inside the handle implementation other low level primitives but you should always reuse as much existing components as possible as this will lead to better faster code as every code is isolated by design there is never sharedState between components only if a component passes its handels to a other component so you are fully aware what shares state.
 
+the above described concepts allow us to partial incremental stealify every existing software or even every software that will ever get written into this Stealify Project which creates then a big repo of Unlicensed Components that you can use without headache. 
+
 ## Features 
 - Operate on SharedMemory
 - Capability based Component Model
