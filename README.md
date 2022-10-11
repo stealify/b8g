@@ -1,12 +1,11 @@
 # b8g (Big Engine) 
 The Core of b8g is the universal module system it combines a complet vm build kit. It offers only the bare minimum needed for that.
-This level of Granularity is the solution to all development problems in the future. Its main aim is to Replace LLVM at some Point and even Integrate all gcc features optional this solves the long discussion about licences as we all know Stealifys main goal is making all under The Unlicense.
+This level of Granularity is the solution to all development problems in the future. Its main aim is to Replace LLVM at some Point and even Integrate all gcc features optional this solves the long discussion about licences as we all know Stealifys main goal is making all under The Unlicense and Stealify Lang as a Meta Language Unlicenses all Other Languages because no one can license or patent or license Generic Arithmetic which is a Math concept. So do not get confused we take care of the rest.
 
 ## Features 
 - Operate on SharedMemory
 - Capability based Component Model
 - Implements Tasks, Streams, Events, as also stdio, fd for backward compat with legacy apps
-
 
 ### Universal Compiler Feedback Interface for LLVM/GCC/V8/GRAALVM
 A Compiler Feedback Interface tooling for Runtimes mainly used to build a StealifyVM distribution written in Stealify Language designed to get used as ring 0 with or without a Linux Kernel offers Adapters for *Nix Kernel and InitD Replacements like SysV SystemD. It is able to take Snapshots that can directly get used in Diffrent Runtime Environments or Standalone.
