@@ -1,11 +1,22 @@
 # b8g (Big Engine) 
-The Core of b8g is the universal module system it combines a complet vm build kit. It offers only the bare minimum needed for that.
+The Core of b8g is the universal module or lets better say component system it combines a complet vm build kit. It offers only the bare minimum needed for that. Every Stealify Project runs on this engine it is the raw core of most stealify fundamentals.
+
 This level of Granularity is the solution to all development problems in the future. Its main aim is to Replace LLVM at some Point and even Integrate all gcc features optional this solves the long discussion about licences as we all know Stealifys main goal is making all under The Unlicense and Stealify Lang as a Meta Language Unlicenses all Other Languages because no one can license or patent or license Generic Arithmetic which is a Math concept. So do not get confused we take care of the rest.
 
 ## Features 
 - Operate on SharedMemory
 - Capability based Component Model
 - Implements Tasks, Streams, Events, as also stdio, fd for backward compat with legacy apps
+- directly address and executable binary serialised stack format that is easy to understand and execute without much additional tooling. allows to expose components of the stack via capability based protocol so isolation and security build in by design.
+
+## Fundamental Concepts
+Stack is a Reference able composition of binary instructions that are executeable. This abstraction level allows us to run anywhere. 
+
+### module / component 
+Both mean the same both end up on the stack while the loading function can be diffrent our final goal is to get everything into the component state as much as possible. So we can focus on fundamentals like calling conventions in assembly and code optimization.
+
+### snapshot
+a binary serialisation of a dynamic execution context also often named state for example tar is a snapshot format for files it serialises them into a single binary representation that is later deserialise able fast doing that with something that dynamicly changes is called a snapshot. A screenshoot for example is also a Snapshot where image is the format. We Serialise into offset addressed Stack Images in our current implementation. This allows us to work with raw binary data without the need to assign it to a symbol like we would need to do in a shared object in c.
 
 ### Universal Compiler Feedback Interface for LLVM/GCC/V8/GRAALVM
 A Compiler Feedback Interface tooling for Runtimes mainly used to build a StealifyVM distribution written in Stealify Language designed to get used as ring 0 with or without a Linux Kernel offers Adapters for *Nix Kernel and InitD Replacements like SysV SystemD. It is able to take Snapshots that can directly get used in Diffrent Runtime Environments or Standalone.
@@ -45,8 +56,12 @@ src/snapshot/snapshot.cc
 a context is a data structure representing the JS/ECMAScript v8 raw Representation including the links and function calls to the Components often referenced as Modules while you can see there is no concept of Dynamic Modules inside a Engine this is a Concept of Runtimes b8g does not Implement a Runtime it is runtime and engine agnostic tooling written in ECMAScript/Stealify Lang using its own Concepts while there will exist a b8g-runtime at some point we do as of current time of writing this refer always to justjs as the proof of concept it is linux only at present but it implements a good starting point alternatives would be graalvm, or deno v8 bindings. see: 
 - [ ] - https://github.com/denoland/deno/issues/1877
 
-b8g is mostly compare able to the graal jvmci in fact b8g also supports the jvmci and can fully interop with it via our LLVM/GRAALVM integrations.
-In Fact b8g can be used as native-image replacement target or even build with graal native image (Importent the later makes not much sense while it is possible for interop)
+b8g is mostly compare able to the graal jvmci and lvvm gcc in fact b8g also implements the jvmci and can fully interop with it also via our LLVM/GRAALVM integrations as also its own Java Bytecode Frontend.
+
+In Fact b8g can be used as native-image replacement target you can see b8g also as replacement for the following engines: docker, libcontainer, kubernetes, mesos, linux, v8, JVM, GraalVM, LLVM, GCC, Zircon (FuchsiaOS), Android, and many more. 
+
+## Diffrence between hardware VM's and b8g
+b8g is it self designed as hypervisor and hypervisor monitor as also manager it offers its own components it does not need the concepts of hardware virtualisation as it does not implements the concept of hardware at all it implements 1 single concept called the component concept that includes hardware so hardware access is always via b8g offerd api's possible in a unified isolated secure way by design no abstraction like a hardware vm is needed to archive all design goals that hardware virtual machines to do implement and offer. For backward compatability it offers components that emulate popular hypervisors or even runs them directly. b8g is designed to run even at ring 0 hardware level it is a low level implementation designed to implement the stealify language.
 
 ## Examples
 - [ ] Using justjs static build.
