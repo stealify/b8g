@@ -7,6 +7,10 @@ every component accepts sharedMemory as also none shared one and a additional ca
 
 the above described concepts allow us to partial incremental stealify every existing software or even every software that will ever get written into this Stealify Project which creates then a big repo of Unlicensed Components that you can use without headache. 
 
+## Security Model
+a context is isolated and has no access to other contexts but they also got a secret key a symbol that you can use to link them up.
+
+
 ## Features 
 - Operate on SharedMemory
 - Capability based Component Model
