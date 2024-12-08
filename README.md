@@ -1,4 +1,8 @@
 # b8g (Big Engine) 
+Is a Platform to run AI generated Code secure and efficent includes debugging and security.
+Stealify targets machines running b8g or the needed core components that make up b8g. 
+
+## Pre 2025
 The Core of b8g is the universal module or lets better say component system it combines a complet vm/sandbox/container build kit. It offers only the bare minimum needed for that. Every Stealify Project runs on this engine it is the raw core of most stealify fundamentals. It turns nativ code into Scriptable engines while the compile methods can also be used to compile standalone code which is highly discuraged as we want to integrate and composit as much
 as we can to get optimized treeshaken code for our Software Deployments. But it can be needed in some cases so it exists.
 
